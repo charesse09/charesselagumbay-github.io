@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+:root{
+--yellow:#f9ca24;
+}
+
+
+*{
+
+ font-family: 'Nunito', sans-serif;
+ margin:0;
+ padding:0;
+ box-sizing: border-box;
+ text-decoration: none;
+ outline: none;
+ border:none;
+ text-transform: capitalize;
+ transition: all .2s linear;
+
+}
+
+*::selection{
+    background:var(--yellow);
+    color:#333;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width: 1.4re;
+}
+
+html::-webkit-scrollbar-track{
+    background: #222;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--yellow);
+}
+
+body{
+    background: #111;
+    overflow-x: hidden;
+    padding-left: 35rem;
+}
+
+section{
+    min-height: 100vh;
+    padding: 1rem;
+
+}
+
+.btn{
+    padding: .7rem 3rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+.btn i{
+    padding: 0 .5rem;
+    font-size: 1.8rem;
+
+}
+
+.btn:hover{
+    background: var(--yellow);
+}
+
+.heading{
+    text-align: center;
+    margin: 0 6rem;
+    font-size: 4rem;
+    padding: 1rem;
+    border-bottom: .4rem solid #fff4;
+    color: #fff;
+}
+
+.heading span{
+    color: var(--yellow);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 35rem;
+    background: #1a1a1a;
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+header .user img{
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: .7rem solid var(--yellow);
+}
+
+header .user .name{
+    font-size: 3.5rem;
+    color: #fff;
+
+}
+
+header .user .post{
+    font-size: 2rem;
+    color: #eee;
+    
+}
+
+header .navbar{
+    width: 100%;
+}
+
+header .navbar ul{
+    list-style: none;
+    padding: 1rem 3rem;
+}   
+
+header .navbar ul a{
+     display: block;
+     padding: 1rem;
+     margin: 1.5rem 0;
+     background:#333;
+     color: #fff;
+     font-size: 2rem;
+     border-radius: 5rem;
+}  
+
+header .navbar ul li a:hover{
+     background-color: var(--yellow);
+}
+
+#menu{
+    position: fixed;
+    top: 2rem; right: 2rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+
+
+
+.blog .box-container{
+    display: blog;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    padding-left: 3rem;
+
+}
+
+.blog .box-container .box{
+    width: 27rem;
+	height: 27rem;
+    margin: 4rem 1rem;
+    padding-left: 4rem;
+    border-left: 2rem solid #fff;
+    position: relative;
+
+}
+
+.blog .box-container .box span{
+    font-size: 1.3rem;
+    background: #222;
+    color: #fff;
+    border-radius: 5rem;
+    padding: .5rem 2.5rem;
+
+}
+
+.blog .box-container .box h3{
+    font-size: 2rem;
+    color: #fff;
+    padding-top: 1.5rem;
+
+}
+
+.blog .box-container .box p{
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.blog .box-container .box i{
+    position: absolute;
+    top: -1.5rem; left: -2.5rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background: var(--yellow);
+
+}
+
+
+
+/* media queries */
+
+@media (max-width: 1200px){
+
+    html{
+        font-size: 55%;
+		color: white;
+
+    }
+    .home{
+        padding:1rem 4rem;
+    }
+}
+
+@media (max-width: 991px){
+    header{
+        left: -120;
+    }
+    #menu{
+        display: block;
+    }
+    header .toggle{
+        left:0%;
+    }
+
+    body{
+        padding: 0;
+    }
+}
+
+@media (max-width:768px){
+    html{
+        font-size: 50%;
+    }
+}
+
+@media (max-width:400px){
+    header{
+        width: 100vw;
+    }
+
+    .heading{
+        margin: 0 3rem;
+    }
+
+    .about .row .counter .box{
+       width: 100%;
+       
+    }
+}
+
+.blog .box-container .box{
+    width: 100%;
+	}
+    
+
+  footer { 
+  padding: 5px;
+  text-align: center;
+  font-size: 11px;
+  font-color: white;
+  background-color: gray;
+  width: 100%;
+  }
+ 
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+}
+.image-container:hover .overlay {
+  opacity: 1;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  border: 2px solid;
+  color: gold;
+}
+
+</head>
+</style>
+
+
+
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Blog</title>
+
+     <!--- font awesome link --->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+     <!-- custom css file link -->
+     <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <header>
+     <!-- header section starts -->
+     <div class="user">
+    <a href="cha.jpg"><img src="cha.jpg" alt="">
+     <h3 class="name">Charesse Lagumbay.</h3><p class="post">im a DevCom Student</p>
+     </div>
+	 
+     <nav class="navbar">
+     <ul>
+     <li><a href="#Blog">Blog</a></li>
+    
+     </ul>
+     </nav>
+  </header>
+     <!-- header section ends --> 
+
+<div id="menu" class="fas fa-bars"></div>
+<a name="Blog"></a>
+
+
+<!---blog section starts---->	
+
+
+   <h1 class="heading">my<span>blog</span></h1>
+ 
+
+      
+         <i class="fas fa-flex-cap"></i>
+    
+		
+</div>	</center>
+		 <center><font color="white"><h2><br>
+* I interviewed a woman, a 2ndyear student, 20 years old, who took a course in<br>
+ food technology at Bukidnon State University. But she kept her identity hidden<br>
+ while I interviewed her for her privacy; she easily answered every question I <br>
+ asked and was surprised because she accepted my offer to interview her even <br>
+ though she was too busy.<br><br>
+ <center><h2><font color="gold">1. Why did you choose food tech course?<br></font color="gold"></h2>
+Answer: Everytime I go to grocery I will found myself spending more time reading<br>
+ the nutrition facts, where it made from, and the first thing I do is looking for<br>
+ the expiration date. I’m always amazed of the nutritional content and ingredient<br>
+ that I don’t understand but that’s not the reason why I choose FT course. As a <br>
+ kid who grow up from poverty food insecurity is the one we always dealing with.<br>
+ The lack of nutrition, not tasty and fresh base on our budgeting we always prefer<br>
+ the cheaper one, and end up eating expired food because according to them it is <br>
+ still “okay” as long as it is still crunchy it is still okay. The food insecurity<br>
+ in the Philippines is the problem that I hope to be solve and it’s much better if
+<br> I contributed on it.<br><br>
+<h2><font color="gold">2. Summarize what have you learned as food tech?<br></font color="gold"></h2>
+Answer: What I learn in my course is not something educational but the purpose of<br>
+ a FT student who are handling food soon and deal with the problem in food industry.<br>
+ The common aspects we tackle is the chemistry of food, we become familiar with <br>
+ microorganisms that cause spoilage, encounter equipment/technology used in laboratory<br>
+ and many more. The  most important thing I learn, I think, is the application of our<br>
+ knowledge in real life situation such as fermenting the vegetable to preserve it <br>
+ popularly known as kimchi.<br><br>
+<h2><font color="gold">3. What is your favorite food tech subject? Why?<br></font color="gold"></h2>
+Answer: So far, food chemistry is my favorite subject. This is where my knowledge about<br>
+ food expanded since it explore the chemistry behind food. However due to complexity<br>
+ of the subject, I’m more likely to be blinded that it’s my favorite chemistry we have<br>
+ since first year. It is because, chemistry may be difficult, but the food chemistry <br>
+ subject is the one who will make you understand what you don’t understand and slowly<br>
+ accepting the fact that food like other microorganisms has scientific explanation that<br>
+ need to be explore, study, understand and solve.<br><br>
+<h2><font color="gold">4. What do you find difficult in food tech course? Why?<br></font color="gold"></h2>
+Answer: All major subject are difficult to me like microbiology and chemistry because<br>
+ I don’t like studying hat much and it’s not like you master it overnight.  Studying <br>
+ chemistry and microbiology is time-consuming and I don’t have time that much since <br>
+ I’m working student and It’s not also helping that I’m slow learner it took time <br>
+ before I understand the topic I mean 5 years or even longer. Or being food Tech student<br>
+ alone is the most difficult because we handle chemicals in laboratory, and deal with <br>
+ real food at the same time where everything gone wrong.<br><br>
+<h2> <font color="gold">5. Will you recommend food tech course to your friend?<br></font color="gold"></h2>
+Answer: Yes, not because I want my friend to suffer the same difficulty as much as I<br> 
+suffer but to open her eye to the significance of being a food tech student. The purpose <br>
+of a FT might change the perception of people about our course and I want to see us <br>
+someday working in the field of food industry.<br><br><br>
+	
+* We had an interview with my partner, a woman, a 3rd year student, 21 years old, who <br>
+took a course in food technology at Bukidnon State University. But the woman had to <br>
+hide her identity while we interviewed her for her privacy. She easily answered every<br> 
+question we asked, even though her answers were not very satisfied with the food <br>
+technology course, but she needed it to continue and end since she started it. We were<br>
+ very surprised because she accepted our offer to interview her even though she was<br> 
+ too busy because of the cumbersome activities she would do.<br><br>
+<h2><font color="gold">1. Why did you choose food tech course?<br></font color="gold"></h2>
+Answer: Actually, Ft is not my 1st choice, I just click it without the knowledge.<br><br>
+<h2><font color="gold">2. Summarize what have you learned as food tech?<br></font color="gold"></h2>
+Answer: You’ve learned innovates food, know all the Food Safety and Food Processing.<br><br>
+<h2><font color="gold">3. What is your favorite food tech subject? Why?<br></font color="gold"></h2>
+Answer: Food Processing, because, excitement to learned how to process foods, how to innovate foods.<br><br>
+<h2><font color="gold">4. What do you find difficult in food tech course? Why?<br></font color="gold"></h2>
+Answer: All Major subjects, and minor can challenge you everyday.<br><br>
+<h2><font color="gold">5. Will you recommend food tech course to your friend?<br></font color="gold"></h2>
+Answer: No, I won’t. I already knew how FT course is difficult.<br><br>
+
+* We had an interview with my partner, a woman, a 4th year student, 23 years old, <br>
+who took a course in food technology at Bukidnon State University. But the woman <br>
+asked us to hide her identity while we were interviewing her for her privacy. <br>
+Because she was too busy, my partner sent us a message that if we could on social<br>
+ media, we would send our question to her, and even if we were only interviewing<br>
+ on social media, we were happy because she took us a few minutes to answer our <br>
+ questions to her.<br><br><br>
+<h2><font color="gold">1. Why did you choose food tech course?<br></font color="gold"></h2>
+Answer: Since my passion is about cooking food that's why I chose the food <br>
+technology course because I really want to know how to experiment every <br>
+kinds of foods or food ingredients whether they are healthy or not. I really<br>
+ want to learn more, not only in experimenting but also on how to develop, <br>
+ process, and of course the quality of food.<br><br>
+<h2><font color="gold">2. Summarize what have you learned as food tech?<br></font color="gold"></h2>
+Answer: These are the things I've learned about how food science is used to<br>
+ the safe food selection, preservation, processing, packaging, distribution,<br>
+ and consumption.<br><br>
+<h2><font color="gold">3. What is your favorite food tech subject? Why?<br></font color="gold"></h2>
+Answer: My preferred FT sub. is cooking because it has been connected to <br>
+lowered stress levels, enhanced awareness, and useful self-expression. <br><br>
+<h2><font color="gold">4.  What do you find difficult in food tech course? Why?<br></font color="gold"></h2>
+Answer: As an FT student, it so really hard to this course but if you <br>
+really love this course you'll do everything to reach your goal in life,<br>
+ just keep striving for your dream.<br><br>
+<h2><font color="gold">5. Will you recommend food tech course to your friend?<br></font color="gold"></h2>
+Answer: Yes, I will undoubtedly tell my friends about the FT course because<br>
+ food technology is an appealing profession. Food technology is actively <br>
+ employed by large food corporations, packaging industries, beverage firms,<br>
+ and industrial kitchens. It also helps us to know how we prepared, develop<br>
+ and process the food.<br><br>
+
+  <h1 class="heading">Ref<span>lection</span></h1><br>
+<h4>In a Food Technology course, it is clear that personal preferences affect<br>
+ how people see the subject. If you love cooking and are interested in nutrition<br>
+ as well as the scientific part of food preparation, this can be the most<br> 
+ interesting and rewarding class for you. It opens eyes to different stages<br> 
+ of food production among other things such as processing methods or even<br>
+ preservation techniques which may come in handy at home or when working <br>
+ in food industry.On the contrary, some individuals may not be so much <br>
+ attracted by cooking or science hence they might not like this course.<br>
+ However, what should never be forgotten about these courses is that they<br>
+ usually take a wider view of what we eat and its impact on our lives; health<br>
+ inclusive but also environmental and social considerations get covered too.<br>
+ Therefore through taking up such units one broadens their understanding<br> 
+ besides discovering new areas of interest.People appreciate Food Technology<br>
+ courses based on their likings and disliking towards them but still regard<br>
+ it valuable because it imparts knowledge concerning consumption processes.</h4>
+
+
+
+	
+</center><font color="white"></h4>
+	
+   </div>   						
+   </div>
+</section>
+<footer>
+version 1/Charesse Lagumbay
+</footer>
+<!----blog section ends----->
+
+
+</body>
+
+</html>
